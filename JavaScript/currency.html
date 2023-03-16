@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Currency Exchange</title>
+        <script>
+
+            const currencys_list = {
+                "rates": {
+                        "CAD": 1.327,
+                        "HKD": 7.763,
+                        "ISK": 125.511,
+                        "PHP": 50.728,
+                        "DKK": 6.791,
+                        "HUF": 306.061,
+                        "CZK": 22.623,
+                        "GBP": 0.771,
+                        "RON": 4.331,
+                        "SEK": 9.592,
+                        "IDR": 13633.381,
+                        "INR": 71.148,
+                        "BRL": 4.231,
+                        "RUB": 63.125,
+                        "HRK": 6.776,
+                        "JPY": 109.851,
+                        "THB": 31.079,
+                        "CHF": 0.973,
+                        "EUR": 0.908,
+                        "KZT": 456.051,
+                        "USD": 1.0000
+                },
+                "base": "USD"
+            }
+
+            document.addEventListener('DOMContentLoaded', function(){
+
+                document.querySelector('form').onsubmit = function() {
+
+                    fetch('https://api.exchangeratesapi.io/latest?base=USD')
+                    .then(response => response.json())  //returns data
+                    .then(data => {
+                        const rate = data.error.type;
+                        document.querySelector('#api').innerHTML = `APIs error: ${rate}`;
+                    });
+                    
+
+                    const currency = document.querySelector('#currency').value.toUpperCase();
+                    const rate =currencys_list.rates[currency]
+                    if (rate !== undefined){
+                        document.querySelector('h1').innerHTML = `1 USD dollar is ${rate.toFixed(3)} ${currency}.`;
+                    } else {
+                        document.querySelector('#result').innerHTML = 'Invalid currency.';
+                    }
+
+                    return false;
+                }
+
+            });
+        </script>
+    </head>
+    <body>
+        <h3 id="api"></h3>
+        <h1></h1>
+        <form>
+            <input id="currency" placeholder="Currency" type="text">
+            <input type="submit" value="Convert">
+        </form>
+        <div id="result">
+
+        </div>
+    </body>
+</html>
