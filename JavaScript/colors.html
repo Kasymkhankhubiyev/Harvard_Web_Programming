@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Hello, JS world!</title>
+        <script>
+
+            // we can replace an anonymous function with atrib => {} that equals function(atrib) {} 
+
+            document.addEventListener("DOMContentLoaded", function(){
+                // Now we get all the wigets
+                document.querySelectorAll('button').forEach(function(button) {
+                    button.onclick = function() {
+                        document.querySelector('#hello').style.color = button.dataset.color;
+                    }
+                });
+
+                
+                // this code gets only one item in a time
+                // // Change font color to red
+                // document.querySelector('#red').onclick = function() {
+                //     document.querySelector('#hello').style.color = 'red';
+                // };
+
+                // // Change font color to blue
+                // document.querySelector('#blue').onclick = function() {
+                //     document.querySelector('#hello').style.color = 'blue';
+                // };
+
+                // // Change font color to greem
+                // document.querySelector('#green').onclick = function() {
+                //     document.querySelector('#hello').style.color = 'green';
+                // };
+            });
+            
+        </script>
+    </head>
+    <body>
+        <h1 id="hello">Hello!</h1>
+        <button data-color="red">Red</button>
+        <button data-color="blue">Blue</button>
+        <button data-color="green">Green</button>
+    </body>
+</html>
