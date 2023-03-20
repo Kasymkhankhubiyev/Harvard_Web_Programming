@@ -18,6 +18,11 @@ class Flight(models.Model):
     def __str__(self) -> str:
         return f'{self.id}: {self.origin} to {self.destination}'
     
+    # adding a check function
+    def is_valid_flight(self):
+        return self.origin != self.destination and self.duration > 0  # have to put 'and'
+
+    
 class Passenger(models.Model):
     first_name = models.CharField(max_length=64)
     last_name = models.CharField(max_length=64)
