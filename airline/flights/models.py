@@ -20,7 +20,7 @@ class Flight(models.Model):
     
     # adding a check function
     def is_valid_flight(self):
-        return self.origin != self.destination and self.duration > 0  # have to put 'and'
+        return self.origin != self.destination or self.duration > 0  # have to put 'and'
 
     
 class Passenger(models.Model):
