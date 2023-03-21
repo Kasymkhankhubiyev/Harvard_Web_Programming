@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WorkINScience</title>
+        <style>
+            .publication {
+                background-color: azure;
+                width: 500px;
+                height: 300px;
+                padding: 30px;
+            }
+
+            h1 {
+                color: black;
+                font-family: sans-serif;
+                font-size: 50px;
+                text-align: center;
+            }
+        </style>
+        <script>
+            window.onscroll = () => {
+                if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                    document.querySelector('body').style.background = 'green';
+                } else {
+                    document.querySelector('body').style.background = 'white';
+                }
+            }
+        </script>
+    </head>
+    <body>
+        {% for post in posts %}
+            <div class="publication">
+                <h1>{{ post }}</h1>
+            </div>
+        {% endfor %}
+
+    </body>
+</html>
