@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+
+  web:
+    build: .
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "8000:8000"
+
+# run in CMD to create a docker: docer-compose up

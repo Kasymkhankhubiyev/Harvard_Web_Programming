@@ -1,0 +1,5 @@
+ Django==4.1.7
+ djangorestframework==3.14.0
+ react==4.3.0
+ Babel==2.12.1
+ selenium==4.8.2
