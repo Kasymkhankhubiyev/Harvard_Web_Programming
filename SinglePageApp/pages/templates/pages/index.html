@@ -4,29 +4,23 @@
         <title>SCrollable Page</title>
         <style>
             div {
-                background-color: green;
-                font-family: 'Times New Roman', Times, serif;
-                font-size: 30px;
-                color: black;
-                width: 500px;
-                height: 100px;
+                background-color: yellow;
+                width: auto;
+                height: 70px;
                 text-align: center;
                 padding: 10px;
             }
-        </style>
-        <script>
-            window.onscroll = () => {
-                if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-                    document.querySelector('body').style.background = 'green';
-                } else {
-                    document.querySelector('body').style.background = 'white';
-                }
+            
+            a {
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 30px;
+                color: black;
             }
-        </script>
+        </style>
     </head>
     <body>
         <div>
-            The first publication
+            <a href="{% url 'pages:news' %}">Новости</a>
         </div>
     </body>
 </html>

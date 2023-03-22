@@ -3,7 +3,7 @@
     <head>
         <title>WorkINScience</title>
         <style>
-            .publication {
+            div {
                 background-color: azure;
                 width: 500px;
                 height: 300px;
@@ -18,21 +18,62 @@
             }
         </style>
         <script>
+
+            // Start with first post
+            let counter = 1;
+
+            //Load posts 20 at a time
+            const quantity = 20;
+
+            document.addEventListener('DOMContentLoaded', load);
+
+            function load() {
+                const start = counter;
+                const end = start + quantity - 1;
+                counter = end + 1;
+
+                //Get new posts and add these posts
+                fetch(`/news?start=${start}&end=${end}`)
+                .then(response => response.json())
+                .then(data => {data.posts.forEach(add_post)});
+            }
+
+
+            function add_post(contents) {
+                const post = document.createElement('div');
+                post.className = 'post';
+                post.innerHTML = contents;
+
+                // Adds a new post into the body
+                document.querySelector('#posts').append(post);
+            }
+
             window.onscroll = () => {
                 if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
                     document.querySelector('body').style.background = 'green';
+                    if (!document.querySelector('button')) {
+                        const btn = document.createElement('button')
+                        btn.innerHTML = 'Загрузить еще'
+                        document.querySelector('body').append(btn)
+                    }
                 } else {
                     document.querySelector('body').style.background = 'white';
+                    document.querySelector('button').remove()
                 }
-            }
+            };
+
+            // document.addEventListener('DOMContentLoaded', () => {
+            //     let counter = 0
+
+            //     if (document.querySelector('button')) {
+            //         document.querySelector('button').onclick = () => {
+
+            //         }
+            //     }
+            // });
         </script>
     </head>
     <body>
-        {% for post in posts %}
-            <div class="publication">
-                <h1>{{ post }}</h1>
-            </div>
-        {% endfor %}
-
+        <div id="posts"></div>
     </body>
 </html>
