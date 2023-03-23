@@ -17,3 +17,6 @@ def grid(request: HttpRequest) -> HttpResponse:
 
 def typography(request: HttpRequest) -> HttpResponse:
     return render(request, 'container/typography.html')
+
+def color(request: HttpRequest) -> HttpResponse:
+    return render(request, 'container/color.html')
