@@ -19,4 +19,16 @@ def typography(request: HttpRequest) -> HttpResponse:
     return render(request, 'container/typography.html')
 
 def color(request: HttpRequest) -> HttpResponse:
-    return render(request, 'container/color.html')
+    return render(request, 'container/colors.html')
+
+def table(request: HttpRequest) -> HttpResponse:
+    return render(request, 'container/table.html')
+
+def image(request: HttpRequest) -> HttpResponse:
+    return render(request, 'container/image.html')
+
+def jumbotron(request: HttpRequest) -> HttpResponse:
+    return render(request, 'container/jumbotron.html')
+
+def buttons(request: HttpRequest) -> HttpResponse:
+    return render(request, 'container/buttons.html')

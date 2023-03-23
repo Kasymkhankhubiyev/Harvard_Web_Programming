@@ -1,0 +1,51 @@
+{% extends 'container/layout.html' %}
+
+{% block body %}
+
+<div class="container my-4 border">
+    <h1>Simple colored buttons</h1>
+    <button type="button" class="btn">Basic</button>
+    <button type="button" class="btn btn-primary">Primary</button>
+    <button type="button" class="btn btn-secondary">Secondary</button>
+    <button type="button" class="btn btn-info">Info</button>
+</div>
+
+<div class="container my-4 border">
+    <h1>Button classes used with a-tag, input-tag and buttons:</h1>
+    <a href="#" class="btn btn-success">Link Button</a>
+    <button type="button" class="btn btn-success">Button</button>
+    <input type="button" class="btn btn-success" value ="Input button">
+    <input type="submit" class="btn btn-success" value ="Submit button">
+    <input type="reset" class="btn btn-success" value ="Reset button">
+</div>
+
+<div class="container my-4 border">
+    <h1>Outlined buttons</h1>
+    <a href="#" class="btn btn-outline-success">Link Button</a>
+    <button type="button" class="btn btn-outline-success">Success</button>
+    <button type="button" class="btn btn-outline-primary">Primary</button>
+    <button type="button" class="btn btn-outline-secondary">Secondary</button>
+</div>
+
+<div class="container my-4 border">
+    <h1>Buttons can have different sizes</h1>
+    <button type="button" class="btn btn-warning btn-lg">Large</button>
+    <button type="button" class="btn btn-primary">Default</button>
+    <button type="button" class="btn btn-secondary btn-sm">Small</button>
+</div>
+
+<div class="container my-4 border">
+    <div class="d-grid">
+        <button type="button" class="btn btn-primary btn-block">Full width btn</button>
+    </div>
+</div>
+
+<div class="container my-4 border">
+    <h1>Buttons with spinners</h1>
+    <button class="btn btn-primary btn-lg">
+        <span class="spinner-border spinner-border-sm"></span>
+        Loading...
+    </button>
+</div>
+
+{% endblock %}
