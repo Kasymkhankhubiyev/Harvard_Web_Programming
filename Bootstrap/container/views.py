@@ -32,3 +32,36 @@ def jumbotron(request: HttpRequest) -> HttpResponse:
 
 def buttons(request: HttpRequest) -> HttpResponse:
     return render(request, 'container/buttons.html')
+
+def groupedbuttons(request: HttpRequest) -> HttpResponse:
+    return render(request, 'container/groupbtns.html')
+
+def badges(request: HttpRequest) -> HttpResponse:
+    return render(request, 'container/badges.html')
+
+def pagination(request: HttpRequest) -> HttpResponse:
+    return render(request, 'container/pagination.html')
+
+def cards(request: HttpRequest) -> HttpResponse:
+    return render(request, 'container/cards.html')
+
+def dropdowns(request: HttpRequest) -> HttpResponse:
+    return render(request, 'container/dropdowns.html')
+
+def navs(request: HttpRequest) -> HttpResponse:
+    return render(request, 'container/navs.html')
+
+def navbar(request: HttpRequest) -> HttpResponse:
+    return render(request, 'container/navbar.html')
+
+def carousel(request: HttpRequest) -> HttpResponse:
+    return render(request, 'container/carousel.html')
+
+def modals(request: HttpRequest) -> HttpResponse:
+    return render(request, 'container/modals.html')
+
+def toasts(request: HttpRequest) -> HttpResponse:
+    return render(request, 'container/toasts.html')
+
+def scrollspy(request: HttpRequest) -> HttpResponse:
+    return render(request, 'container/scrollspy.html')

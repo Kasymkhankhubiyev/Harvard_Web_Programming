@@ -1,9 +1,10 @@
 {% extends 'container/layout.html' %}
+{% load static %}
 
 {% block body %}
 
 <div class="container mt-3 bordered">
-    <img src="cat03.jpg" class="rounded" alt="kitty">
+    <img src="{% static 'container/cat03.jpg' %}" class="rounded" alt="kitty">
 </div>
 
 {% endblock %}

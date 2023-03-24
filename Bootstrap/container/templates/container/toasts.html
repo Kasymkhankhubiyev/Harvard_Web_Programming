@@ -1,0 +1,29 @@
+{% extends 'container/layout.html' %}
+
+{% block body %}
+
+<div class="container pt-5 my-5 border">
+    <h1>Toast element</h1>
+    <button type="button" id="toastbtn" class="btn btn-primary">Show toast</button>
+    <div class="toast">
+        <div class="toast-header">
+            <strong class="me-auto">Toast Header</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+        </div>
+        <div class="toast-body">
+            <p>Some text inside the toast body</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("toastbtn").onclick = () => {
+        var toastElist = [].slice.call(document.querySelectorAll('.toast'));
+        var toastlist = toastElist.map(function(toastEl) {
+            return new bootstrap.Toast(toastEl)
+        });
+        toastlist.forEach(toast => toast.show())
+    }
+</script>
+
+{% endblock %}

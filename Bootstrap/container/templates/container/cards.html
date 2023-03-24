@@ -1,0 +1,39 @@
+{% extends 'container/layout.html' %}
+{% load static %}
+
+{% block body %}
+<div class="container py-5 mt-5 dorder">
+    <h1>This is a basic card</h1>
+    <div class="card">
+        <div class="card-header">Header</div>
+        <div class="card-body">Basic card</div>
+        <div class="card-footer">Footer</div>
+    </div>
+</div>
+
+<div class="container py-5 mt-5 dorder">
+    <h1>Cards with photos in them</h1>
+    <div class="row">
+        <div class="col">
+            <div class="card" style="width:400px">
+                <img class="card-img-top" src="{% static 'container/cat03.jpg' %}" alt="Card Image">
+                <!-- <div class="card-header">Header</div> -->
+                <div class="card-body">Basic card</div>
+                <h4 class="card-title">Mr. Cat</h4>
+                <p class="card-text">Lead researcher in the Cat AI laboratory.</p>
+                <a href="#" class="btn btn-primary">See profile</a>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width:400px">
+                <img class="card-img-bottom" src="{% static 'container/cat04.jpg' %}" alt="Card Image">
+                <!-- <div class="card-header">Header</div> -->
+                <div class="card-body">Basic card</div>
+                <h4 class="card-title">Ms. Cat</h4>
+                <p class="card-text">Lead engineer in the Cat Chemistry laboratory.</p>
+                <a href="#" class="btn btn-primary">See profile</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
